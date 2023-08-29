@@ -12,12 +12,15 @@ import org.jetbrains.annotations.NotNull;
 public class ViewScreen extends Screen {
     View toplevelView;
 
+    final MouseHandler mouseHandler = new MouseHandler();
+
     protected ViewScreen(View toplevelView) {
         super(Component.empty());
     }
 
     @Override
     public void render(@NotNull GuiGraphics guiGraphics, int p_281550_, int p_282878_, float p_282465_) {
+        mouseHandler.update();
         toplevelView.updateAll();
     }
 }

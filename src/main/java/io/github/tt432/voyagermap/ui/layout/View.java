@@ -14,9 +14,7 @@ public class View {
     public ViewPos actualPos;
     public ViewShape shape;
 
-    public final MouseHandler mouseHandler = new MouseHandler();
-
-    public boolean toplevel;
+    public MouseHandler mouseHandler;
 
     public void layoutChildren() {
         // need child impl this
@@ -33,10 +31,6 @@ public class View {
 
     public void updateState() {
         layoutChildren();
-
-        if (toplevel) {
-            mouseHandler.update();
-        }
     }
 
     public void onMouse(float mouseX, float mouseY, int mouseEvent) {
